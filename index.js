@@ -53,7 +53,7 @@ app.get('/:id/delete',  urlencodedParser, function (req, res) {
           res.redirect('/')
         });
       });
- })
+})
 
 
 
@@ -85,7 +85,7 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
             req.body.i4,
             req.body.i5
         ],
-        "zoom": req.body.zoom,
+          "zoom": req.body.zoom,
         "hours": [
             [
                 [
@@ -181,7 +181,7 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
     all.splice(parseInt(id),1, object )
     //write to json file
     console.log(all)
-      fs.writeFileSync('./all.json', JSON.stringify(all), (err) => {
+      fs.writeFile('./all.json', JSON.stringify(all), (err) => {
           // throws an error, you could also catch it here
           if (err) throw err;
 
@@ -190,7 +190,7 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
           res.redirect('/')
           });
       })  
-   
+    
  })
 
 
@@ -367,4 +367,4 @@ app.get('/api/all', function (req, res){
 
 
 
-app.listen( process.env.PORT || '5000');
+app.listen( process.env.PORT || 8000);
